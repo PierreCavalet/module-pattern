@@ -3,7 +3,7 @@
 ## What is a module ?
 
 A module is a set of functionalities that you can easily add or remove without breaking your application.
-Ó
+
 ### What is the goal of modules ?
 
 Modules are used for four main reasons:
