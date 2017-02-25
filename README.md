@@ -89,7 +89,7 @@ Module.privateMethod(); // undefined
 
 Ok, it may seems like a lot to take in. Let's break it down.
 
-In javascript, variables declared within a function become **local** to the function. `privateMethod` and `publicMethod` are **not** accessible OUTSIDE the IIFE.
+In javascript, variables declared within a function become **local** to the function. `privateMethod` and `publicMethod` are **not** accessible outside the IIFE.
 
 We are using an IIFE which returns a JSON Object. this JSON object is going in the `Module` variable. It will represent our module. The goal of this object is to **reveal** (that is why it is called Revealing module pattern) the functions and variables we want our module to expose.
 
