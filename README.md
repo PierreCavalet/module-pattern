@@ -3,7 +3,7 @@
 ## What is a module ?
 
 A module is a set of functionalities that you can easily add or remove without breaking your application.
-
+Ó
 ### What is the goal of modules ?
 
 Modules are used for four main reasons:
@@ -89,11 +89,11 @@ Module.privateMethod(); // undefined
 
 Ok, it may seems like a lot to take in. Let's break it down.
 
-In javascript, variables declared within a function become LOCAL to the function. `privateMethod` AND `publicMethod` are **not** accessible OUTSIDE the IIFE.
+In javascript, variables declared within a function become **local** to the function. `privateMethod` and `publicMethod` are **not** accessible OUTSIDE the IIFE.
 
-We are using an IIFE which returns a JSON Object. this JSON object is going in the `Module` variable. It will represent our module. The goal of this object is to REVEAL (that is why it is called Revealing module pattern) the functions and variables we want our module to expose.
+We are using an IIFE which returns a JSON Object. this JSON object is going in the `Module` variable. It will represent our module. The goal of this object is to **reveal** (that is why it is called Revealing module pattern) the functions and variables we want our module to expose.
 
-Here, we are REVEALING the publicMethod, and that is why we can access the publicMethod with
+Here, we are **revealing** the publicMethod, and that is why we can access the publicMethod with
 
 ```js
 Module.publicMethod();  // public
@@ -105,7 +105,7 @@ and why we cannot access the privateMethod.
 
 We created a module with 2 functions, one that we exposed (revealed), and one that is private. The private function can only be used in the module (i.e. in the IIFE). **Privacy**.
 
-The code for the module is inside the IIFE, and the code to use the module is OUTSIDE. **Maintainability**.
+The code for the module is inside the IIFE, and the code to use the module is outside. **Maintainability**.
 
 We can use this module wherever we want by using the Module global variable. **Reusability**.
 
