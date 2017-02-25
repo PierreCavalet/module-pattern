@@ -109,4 +109,4 @@ The code for the module is inside the IIFE, and the code to use the module is OU
 
 We can use this module wherever we want by using the Module global variable. **Reusability**.
 
-Everything which is exposed by the module is prefixed by `Module.` and the module itself is the only thing is the global scope. **Namespacing**.
+Everything which is exposed by the module is prefixed by `Module.` and the module itself is the only thing in the global scope. **Namespacing**.
