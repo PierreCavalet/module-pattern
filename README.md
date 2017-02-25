@@ -2,7 +2,7 @@
 
 ## What is a module ?
 
-A module is a set of functionality that you can easily add or remove without breaking your application.
+A module is a set of functionalities that you can easily add or remove without breaking your application.
 
 ### What is the goal of modules ?
 
@@ -25,7 +25,7 @@ Modules are used to mimic classes. It provides a way to have both public and pri
 
 ## How do I create a module ?
 
-There are multiple implementations of the module pattern, but the importing thing is to understand what is the goal of the module pattern. Because of that, I am just presenting one of the module pattern implementation, which is called the **Revealing Module pattern**.
+There are multiple implementations of the module pattern, but the important thing is to understand what is the goal of the module pattern. Because of that, I am just presenting one of the module pattern implementation, which is called the **Revealing Module pattern**.
 
 ### Immediately Invoked Function Expressions
 
@@ -33,7 +33,7 @@ To understand the module pattern, you first need to understand what IIFE (Immedi
 
 An IFFE is ... that:
 
-```
+```js
 (function () {
   // code
 })();
@@ -43,7 +43,7 @@ I bet you have already seen that. The code inside the function is immediately ex
 
 for example, if you write this in your console:
 
-```
+```js
 (function () {
   console.log('Testing an IIFE');
 })();
@@ -53,7 +53,7 @@ You'll see `Testing an IIFE`
 
 The parentheses wrapping the function are used to create an expression, and the last parentheses are used to invoke this function (just like you would call any function). So if you want to pass parameters in your function, you would be doing this:
 
-```
+```js
 (function (text) {
   console.log('Testing an IIFE parameters: ' + text);
 })('foo');
@@ -70,7 +70,7 @@ Well I guess you are right. But I promise you it will be useful soon enough.
 ### Building the module
 I think the best way to explain the module pattern is to give you an example of a simple module and then to break it down so here it is (don't be scared, you are gonna be all right):
 
-```
+```js
 var Module = (function () {
   var privateMethod = function () {
     console.log('private');
@@ -85,7 +85,6 @@ var Module = (function () {
 
 Module.publicMethod();  // public
 Module.privateMethod(); // undefined
-
 ```
 
 Ok, it may seems like a lot to take in. Let's break it down.
@@ -95,9 +94,11 @@ In javascript, variables declared within a function become LOCAL to the function
 We are using an IIFE which returns a JSON Object. this JSON object is going in the `Module` variable. It will represent our module. The goal of this object is to REVEAL (that is why it is called Revealing module pattern) the functions and variables we want our module to expose.
 
 Here, we are REVEALING the publicMethod, and that is why we can access the publicMethod with
-```
+
+```js
 Module.publicMethod();  // public
 ```
+
 and why we cannot access the privateMethod.
 
 **So what did we do ?**
