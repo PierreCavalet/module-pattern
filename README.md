@@ -75,9 +75,11 @@ var Module = (function () {
   var privateMethod = function () {
     console.log('private');
   };
+  
   var publicMethod = function () {
     console.log('public');
   };
+
   return {
     publicMethod: publicMethod
   };
@@ -110,3 +112,33 @@ The code for the module is inside the IIFE, and the code to use the module is ou
 We can use this module wherever we want by using the Module global variable. **Reusability**.
 
 Everything which is exposed by the module is prefixed by `Module.` and the module itself is the only thing in the global scope. **Namespacing**.
+
+## Module dependencies
+
+Previously, we have seen how to inject parameters in an IIFE. Since a module is technically an IIFE, you can inject parameters and use it just as you would with a standard function.
+
+```js
+var Module2 = (function (Module1) {
+  var bar = function () {
+    Module1.foo()
+  };
+
+  return {
+    bar: bar
+  };
+})(Module1 || {});
+```
+
+## Augmenting modules
+
+It can be used to add or override module functions.
+
+```js
+var AugModule = (function (Module) {
+  Module.newFunction = function () {
+    // do something
+  };
+
+  return Module;
+})(Module || {});
+```
